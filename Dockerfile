@@ -7,7 +7,6 @@ RUN mkdir qotd-csharp
 WORKDIR qotd-csharp
 ADD . .
 
-RUN subscription-manager attach --auto
 RUN yum -y update
 
 RUN dotnet publish -c Release
