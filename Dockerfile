@@ -1,17 +1,15 @@
-FROM registry.access.redhat.com/ubi8/dotnet-31:3.1
-#USER 1001
+#FROM registry.access.redhat.com/ubi8/dotnet-31:3.1
+FROM registry.access.redhat.com/ubi8/ubi-init
+USER 1001
 
-USER root
+RUN yum -y update
+RUN yum -y dotnet-sdk-3.1;
 
 RUN mkdir qotd-csharp
 WORKDIR qotd-csharp
 ADD . .
 
-RUN yum -y update
-
 RUN dotnet publish -c Release
-
-
 
 EXPOSE 80
 
