@@ -21,7 +21,6 @@ namespace qotd_csharp
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://0.0.0.0:10000");
                 });
     }
 }
